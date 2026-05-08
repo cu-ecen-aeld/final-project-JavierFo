@@ -12,6 +12,7 @@ Demonstrating the full lifecycle of an embedded Linux product—from training a 
 
 ## Hardware Block Diagram
 graph TD
+
     subgraph "Raspberry Pi 4 (Edge Device)"
         Camera[USB Webcam / V4L2] -->|Raw Frames| GST[GStreamer Pipeline]
         GST -->|RGB 224x224| CPP[C++ Inference App]
@@ -27,7 +28,9 @@ graph TD
     end
 
 ## 2. Target Build System
-This project utilizes the Yocto Project (Poky distribution) to generate a minimal, production-ready Linux image. By using Yocto instead of a general-purpose OS like Raspberry Pi OS, we achieve:
+This project utilizes the Yocto Project (Poky distribution) to generate a minimal, production-ready Linux image. 
+
+By using Yocto instead of a general-purpose OS like Raspberry Pi OS, we achieve:
 * Reduced Footprint: Only essential libraries (GStreamer, TFLite, Mosquitto) are included.
 * Reproducibility: The entire OS configuration is defined in metadata layers.
 * Performance: Optimized compiler flags for the Broadcom BCM2711.
@@ -36,6 +39,7 @@ This project utilizes the Yocto Project (Poky distribution) to generate a minima
 The primary target is the Raspberry Pi 4 Model B (64-bit).
 
 Build Platform Support
+
 We leverage the meta-raspberrypi BSP layer to support hardware-specific features:
 
 * Video4Linux2 (V4L2): For low-latency camera access.
@@ -43,10 +47,10 @@ We leverage the meta-raspberrypi BSP layer to support hardware-specific features
 * Documentation: Raspberry Pi 4 Hardware Documentation.
 
 ## 4. Open Source Projects Used
-TensorFlow Lite: Used for the INT8 inference engine.
-GStreamer: Handles the multi-threaded video capture and pixel format conversion (RGB).
-Eclipse Mosquitto: Provides the MQTT C library for cloud communication.
-Oxford-IIIT Pet Dataset: Used for training the MobileNetV2 model.
+* TensorFlow Lite: Used for the INT8 inference engine.
+* GStreamer: Handles the multi-threaded video capture and pixel format conversion (RGB).
+* Eclipse Mosquitto: Provides the MQTT C library for cloud communication.
+* Oxford-IIIT Pet Dataset: Used for training the MobileNetV2 model.
 
 ## 5. Previously Discussed Content Integration
 The project applies core Embedded Linux concepts learned throughout the curriculum:
@@ -67,6 +71,7 @@ This project extends beyond standard Embedded Linux into Deep Learning Engineeri
 
 ## 7. Source Code Organization
 The application code and Yocto recipes are organized as follows:
+```
 .
 ├── meta-aesd (Custom Yocto Layer)
 │   ├── recipes-app
@@ -82,18 +87,20 @@ The application code and Yocto recipes are organized as follows:
 │       └── images
 │           └── core-image-aesd.bb        # Custom image definition
 └── README.md
+```
 
 ### Submodule Links: 
-Poky: https://git.yoctoproject.org/poky
-Meta-OpenEmbedded: http://git.openembedded.org/meta-openembedded
-TensorFlow Lite: https://github.com/tensorflow/tensorflow (v2.12.0)
-Mosquitto: https://github.com/eclipse/mosquitto
+- Poky: https://git.yoctoproject.org/poky
+- Meta-OpenEmbedded: http://git.openembedded.org/meta-openembedded
+- TensorFlow Lite: https://github.com/tensorflow/tensorflow (v2.12.0)
+- Mosquitto: https://github.com/eclipse/mosquitto
 
 ### Quick Start (Deployment)
-WiFi Setup: Inject wpa_supplicant.conf into /etc/ on the rootfs.
+- WiFi Setup: Inject wpa_supplicant.conf into /etc/ on the rootfs.
+
 Run Application:
-pet-classifier
-View Cloud Data: Visit the HiveMQ Web Console: https://www.hivemq.com/demos/websocket-client/ and subscribe to raspi4/pet_classifier/results.
+- pet-classifier
+- View Cloud Data: Visit the HiveMQ Web Console: https://www.hivemq.com/demos/websocket-client/ and subscribe to raspi4/pet_classifier/results.
 
 ## 8. Shared Material
 N/A
@@ -102,4 +109,6 @@ N/A
 Javier Fo
 
 ## Schedule Page:
+[JavierFo's final-project-cu-ecen-aeld](https://github.com/users/JavierFo/projects/1/views/1?groupedBy%5BcolumnId%5D=345535217&visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C345535217%5D
+)
 
