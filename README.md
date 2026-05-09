@@ -1,7 +1,7 @@
 # final-project-JavierFo
 final-project-JavierFo created by GitHub Classroom
 
-(Also in Wiki)
+* Also in Wiki: https://github.com/cu-ecen-aeld/final-project-JavierFo/wiki/Edge%E2%80%90AI-Pet-Classifier
 
 ## Edge-AI Pet Classifier
 This README provides a comprehensive technical overview of the Edge-AI Pet Classifier, a high-performance embedded vision system designed for the Raspberry Pi 4. It integrates deep learning inference at the edge with cloud-based reporting via MQTT.
