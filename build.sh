@@ -1,15 +1,16 @@
 #!/bin/bash
-# Script to build image for qemu.
-# Author: Siddhant Jajoo.
 
 git submodule init
 git submodule sync
 git submodule update
 
+export PYTHON=/usr/local/bin/python3.10
+export BB_PYTHON=/usr/local/bin/python3.10
+
 # local.conf won't exist until this step on first execution
 source poky/oe-init-build-env
 
-CONFLINE="MACHINE = \"qemuarm64\""
+CONFLINE="MACHINE = \"raspberrypi4-64\""
 
 cat conf/local.conf | grep "${CONFLINE}" > /dev/null
 local_conf_info=$?

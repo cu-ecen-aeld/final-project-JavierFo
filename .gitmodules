@@ -5,3 +5,11 @@
 	path = poky
 	url = git://git.yoctoproject.org/poky
 	branch = kirkstone
+[submodule "meta-tensorflow-lite"]
+	path = meta-tensorflow-lite
+	url = https://github.com/NobuoTsukamoto/meta-tensorflow-lite.git
+	branch = kirkstone
+[submodule "openembedded-core"]
+	path = openembedded-core
+	url = https://github.com/openembedded/openembedded-core.git
+	branch = kirkstone
