@@ -95,11 +95,11 @@ N/A
 ## 9. Members: 
 Javier Fo - Main developer
 
-## Schedule Page:
+## 10. Schedule Page:
 [JavierFo's final-project-cu-ecen-aeld](https://github.com/users/JavierFo/projects/1/views/1?groupedBy%5BcolumnId%5D=345535217&visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C345535217%5D
 )
 
-## Pet-CLassifier Ubuntu Host test:
+## 11. Pet-CLassifier Ubuntu Host test:
 1. Make sure the following dependencies are installed:
 
 ```
