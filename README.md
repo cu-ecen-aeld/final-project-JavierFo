@@ -99,3 +99,20 @@ Javier Fo - Main developer
 [JavierFo's final-project-cu-ecen-aeld](https://github.com/users/JavierFo/projects/1/views/1?groupedBy%5BcolumnId%5D=345535217&visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C345535217%5D
 )
 
+## Pet-CLassifier Ubuntu Host test:
+1. Make sure the following dependencies are installed:
+
+```
+sudo apt-get update
+sudo apt-get install build-essential cmake pkg-config libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-tools v4l-utils
+sudo apt-get install libmosquitto-dev mosquitto-clients
+```
+
+2. To run pet-classifier-host test in terminal:
+
+```
+cd build
+cmake ..
+make -j$(nproc)
+./pet-classifier-host
+```
