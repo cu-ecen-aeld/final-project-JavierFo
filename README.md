@@ -111,7 +111,7 @@ sudo apt-get install libmosquitto-dev mosquitto-clients
 2. To run pet-classifier-host test in terminal:
 
 ```
-cd build
+cd pet-host-test/build
 cmake ..
 make -j$(nproc)
 ./pet-classifier-host
